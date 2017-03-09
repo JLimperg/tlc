@@ -18,8 +18,8 @@ Proof using. intros. apply (prove_Inhab tt). Qed.
 
 Global Instance unit_comparable : Comparable unit.
 Proof using.
-  apply make_comparable. intros [x]. destruct x.
-  rewrite* prop_eq_True_back. typeclass.
+  apply make_comparable. intros x y. destruct x, y.
+  apply decidable_make with (decide := true). rewrite eqb_eq; reflexivity.
 Qed.
 
 
@@ -29,6 +29,3 @@ Qed.
 Lemma unit_unique : forall tt1 tt2 : unit,
   tt1 = tt2.
 Proof using. intros. destruct tt1. destruct~ tt2. Qed.
-
-
-

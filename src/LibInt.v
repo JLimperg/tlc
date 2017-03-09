@@ -99,7 +99,7 @@ Qed.
 Global Instance int_comparable : Comparable int.
 Proof using.
   applys comparable_beq (fun i j => decide (i ?= j = Eq)). intros x y.
-  simpl; rew_refl; iff H; rewrite Z.compare_eq_iff in * |- *; inverts~ H.
+  simpl; rew_refl; iff H; rewrite Z.compare_eq_iff in * |- *; exact H.
 Qed.
 
 

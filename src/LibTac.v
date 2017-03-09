@@ -995,7 +995,7 @@ Proof using.
   (* [inversion] can generate some dependently-typed equalities *)
   - inversion H. admit.
   (* [inverts] carries out all the substitution properly *)
-  - invert H. =>> R1 R2 R3. admit.
+  - invert H. (* =>> R1 R2 R3. *) admit.
 Admitted.
 
 
